@@ -1,0 +1,28 @@
+{
+  "name": "aes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lql6639/AES.git"
+  },
+  "keywords": [
+    "aes",
+    "aesjs"
+  ],
+  "author": "koizora",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lql6639/AES/issues"
+  },
+  "homepage": "https://github.com/lql6639/AES#readme",
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "pkcs7": "^1.0.4"
+  }
+}
