@@ -1,7 +1,7 @@
 const aesjs = require('aes-js')
 
 // 导入配置文件
-const { aes } = require('../config.js')
+const { aes } = require('../../config.js')
 
 /**
  * @description Block Cipher 加密密文.length -> 32
@@ -10,10 +10,10 @@ const { aes } = require('../config.js')
  * @param {string} content 加密内容
  * content must be 16 bytes, no more, no less
  * @example
- * AES_BC_Encryption (content)
+ * Bc_Encryption (content)
  */
 
-function AES_BC_Encryption (content) {
+function Bc_Encryption(content) {
 
   const aesBc = new aesjs.AES(aes.key)
 
@@ -26,14 +26,14 @@ function AES_BC_Encryption (content) {
  * @license Apache-2.0
  * @param {string} encryptedHex 加密后的密文
  * @example
- * AES_BC_Decryption (encryptedHex)
+ * Bc_Decryption (encryptedHex)
  */
 
-function AES_BC_Decryption (encryptedHex) {
+function Bc_Decryption(encryptedHex) {
 
   const aesBc = new aesjs.AES(aes.key)
 
   return aesjs.utils.utf8.fromBytes(aesBc.decrypt(Buffer.from(encryptedHex, 'base64')))
 }
 
-module.exports = { AES_BC_Encryption, AES_BC_Decryption }
+module.exports = { Bc_Encryption, Bc_Decryption }

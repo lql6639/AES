@@ -1,7 +1,7 @@
 const aesjs = require('aes-js')
 
 // 导入配置文件
-const { aes } = require('../config.js')
+const { aes } = require('../../config.js')
 
 const { pkcs7_padded, pkcs7_unpadded } = require('./pkcs7.js')
 
@@ -11,10 +11,10 @@ const { pkcs7_padded, pkcs7_unpadded } = require('./pkcs7.js')
  * @license Apache-2.0
  * @param {string} content 加密内容
  * @example
- * AES_CFB_Encryption (content)
+ * Cfb_Encryption (content)
  */
 
-function AES_CFB_Encryption (content) {
+function Cfb_Encryption(content) {
 
   const padded = pkcs7_padded(content)
 
@@ -29,10 +29,10 @@ function AES_CFB_Encryption (content) {
  * @license Apache-2.0
  * @param {string} encryptedHex 加密后的密文
  * @example
- * AES_CFB_Decryption (encryptedHex)
+ * Cfb_Decryption (encryptedHex)
  */
 
-function AES_CFB_Decryption (encryptedHex) {
+function Cfb_Decryption(encryptedHex) {
 
   const aesCfb = new aesjs.ModeOfOperation.cfb(aes.key, Buffer.from(encryptedHex, 'base64').subarray(0, 16), aes.Size)
 
@@ -41,4 +41,4 @@ function AES_CFB_Decryption (encryptedHex) {
   return pkcs7_unpadded(encrypted)
 }
 
-module.exports = { AES_CFB_Encryption, AES_CFB_Decryption }
+module.exports = { Cfb_Encryption, Cfb_Decryption }

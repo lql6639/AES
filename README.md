@@ -12,12 +12,12 @@ pnpm install aes-js@3.1.2
 pnpm install pkcs7@1.0.4
 ```
 
-### 2、AES 加密 解密
+### 2、AES 加密 & 解密
 
 + 1、导入需要的 AES 加密类型模块
 
 ```javascript
-const { AES_CBC_Encryption, AES_CBC_Decryption } = require('./utils/CBC.js')
+const { Cbc_Encryption, Cbc_Decryption } = require('./utils/aes/Cbc.js')
 ```
 
 + 2、需要加密的数据
@@ -29,7 +29,7 @@ const data = { code: 200, success: true, message: 'ok' }
 + 3、加密
 
 ```javascript
-const encrypted = AES_CBC_Encryption(data)
+const encrypted = Cbc_Encryption(data)
 
 console.log(encrypted)
 
@@ -39,7 +39,7 @@ console.log(encrypted)
 + 4、解密
 
 ```javascript
-const decrypted = AES_CBC_Decryption(encrypted)
+const decrypted = Cbc_Decryption(encrypted)
 
 console.log(decrypted)
 

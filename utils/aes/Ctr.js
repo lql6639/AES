@@ -1,7 +1,7 @@
 const aesjs = require('aes-js')
 
 // 导入配置文件
-const { aes } = require('../config.js')
+const { aes } = require('../../config.js')
 
 const { pkcs7_padded, pkcs7_unpadded } = require('./pkcs7.js')
 
@@ -11,10 +11,10 @@ const { pkcs7_padded, pkcs7_unpadded } = require('./pkcs7.js')
  * @license Apache-2.0
  * @param {string} content 加密内容
  * @example
- * AES_CTR_Encryption (content)
+ * Ctr_Encryption (content)
  */
 
-function AES_CTR_Encryption (content) {
+function Ctr_Encryption(content) {
 
   const padded = pkcs7_padded(content)
 
@@ -29,10 +29,10 @@ function AES_CTR_Encryption (content) {
  * @license Apache-2.0
  * @param {string} encryptedHex 加密后的密文
  * @example
- * AES_CTR_Decryption (encryptedHex)
+ * Ctr_Decryption (encryptedHex)
  */
 
-function AES_CTR_Decryption (encryptedHex) {
+function Ctr_Decryption(encryptedHex) {
 
   const aesCtr = new aesjs.ModeOfOperation.ctr(aes.key, new aesjs.Counter(aes.Counter))
 
@@ -41,4 +41,4 @@ function AES_CTR_Decryption (encryptedHex) {
   return pkcs7_unpadded(encrypted)
 }
 
-module.exports = { AES_CTR_Encryption, AES_CTR_Decryption }
+module.exports = { Ctr_Encryption, Ctr_Decryption }

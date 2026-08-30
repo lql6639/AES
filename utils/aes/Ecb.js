@@ -1,7 +1,7 @@
 const aesjs = require('aes-js')
 
 // 导入配置文件
-const { aes } = require('../config.js')
+const { aes } = require('../../config.js')
 
 const { pkcs7_padded, pkcs7_unpadded } = require('./pkcs7.js')
 
@@ -12,10 +12,10 @@ const { pkcs7_padded, pkcs7_unpadded } = require('./pkcs7.js')
  * @param {string} content 加密内容
  * content must be multiple of 16 bytes
  * @example
- * AES_ECB_Encryption (content)
+ * Ecb_Encryption (content)
  */
 
-function AES_ECB_Encryption (content) {
+function Ecb_Encryption(content) {
 
   const padded = pkcs7_padded(content)
 
@@ -30,10 +30,10 @@ function AES_ECB_Encryption (content) {
  * @license Apache-2.0
  * @param {string} encryptedHex 加密后的密文
  * @example
- * AES_ECB_Decryption (encryptedHex)
+ * Ecb_Decryption (encryptedHex)
  */
 
-function AES_ECB_Decryption (encryptedHex) {
+function Ecb_Decryption(encryptedHex) {
 
   const aesEcb = new aesjs.ModeOfOperation.ecb(aes.key)
 
@@ -42,4 +42,4 @@ function AES_ECB_Decryption (encryptedHex) {
   return pkcs7_unpadded(encrypted)
 }
 
-module.exports = { AES_ECB_Encryption, AES_ECB_Decryption }
+module.exports = { Ecb_Encryption, Ecb_Decryption }
