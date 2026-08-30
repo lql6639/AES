@@ -1,8 +1,8 @@
 {
   "name": "aes",
   "version": "1.0.0",
-  "description": "",
-  "main": "config.js",
+  "description": "AES 加密 & 解密",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

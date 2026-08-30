@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 .DS_Store
+pnpm-lock.yaml
 dist
 dist-ssr
 coverage
